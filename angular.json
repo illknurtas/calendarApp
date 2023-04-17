@@ -22,12 +22,22 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/primeicons",
+                "output": "./assets/icons"
+              }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/primeicons/primeicons.css",
+              "./node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "./node_modules/primeng/resources/primeng.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/moment/moment.js"
+            ]
           },
           "configurations": {
             "production": {
