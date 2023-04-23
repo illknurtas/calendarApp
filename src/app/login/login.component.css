@@ -1,0 +1,34 @@
+.form-container{
+    border: 1px solid #5283f6;
+    border-radius: 1rem;
+    width: 55%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.p-d-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+.title{
+    font-weight: 500;
+    color:#133ea1;
+}
+
+  /* PASSWORD */
+  .psw{
+    margin-top: 1.5rem;
+  }
+
+  p-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+  }

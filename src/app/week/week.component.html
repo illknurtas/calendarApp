@@ -1,1 +1,31 @@
-<p>week works!</p>
+<div class="calendar">
+    <main>
+        <div class="sidebar">
+            <div class="week">
+                <p class="current">HAFTA {{currentWeek}}</p>
+                
+            </div>
+        </div>
+        <div class="main">
+            <div class="days">
+                <div class="day">
+                    <p *ngFor="let dayName of dayNames">{{dayName}}</p>
+                </div>
+                <div class="weekdays">
+                    <p *ngFor="let weekDay of weekDays">{{weekDay}}</p>
+                </div>
+                
+            </div>
+            
+            <div class="arrows">
+                <button pButton pRipple label="ÖNCEKİ" (click)="goPreviousWeek()"></button>
+                <p (click)="goCurrentDate()">{{currentDate}}</p>
+                <button pButton pRipple label="SONRAKİ" (click)="goNextWeek()"></button>
+            </div>
+        </div>
+        
+    </main>
+    <footer>
+
+    </footer>
+</div>
