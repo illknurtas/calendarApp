@@ -1,7 +1,5 @@
 import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import * as moment from 'moment';
-import { AccountService } from '../services/account.service';
 
 @Component({
   selector: 'app-week',
@@ -13,13 +11,13 @@ export class WeekComponent {
   currentDate: string;
   dayNames: string[];
   weekDays: string[];
-  
-  constructor(private cdRef: ChangeDetectorRef,
-    private accountService: AccountService,
-    private router: Router){
+  currentMonth: string;
+
+  constructor(private cdRef: ChangeDetectorRef){
     moment.locale('tr');
     const today = moment();
     this.currentWeek = today.week();
+    this.currentMonth = today.format("MMMM"); // current month
 
     // day names
     this.dayNames = [];
@@ -37,18 +35,13 @@ export class WeekComponent {
     this.currentDate = today.format("DD/MM/YYYY");
   }
 
-  // ngOnInit() {
-  //     if(!this.accountService.isLoggedIn()){
-  //       this.router.navigate(['login']);
-  //     }
-  // }
-  // previous week button
   goPreviousWeek(){
     this.currentWeek-=1;
     this.weekDays=[];
     for(let i = 1; i <= 7; i++){
       this.weekDays.push(moment().week(this.currentWeek).weekday(i).format("DD"));
     }
+    this.currentMonth = moment().week(this.currentWeek).format("MMMM");
   }
 
   // next week button
@@ -58,11 +51,14 @@ export class WeekComponent {
     for(let i = 1; i <= 7; i++){
       this.weekDays.push(moment().week(this.currentWeek).weekday(i).format("DD"));
     }
+    this.currentMonth = moment().week(this.currentWeek).format("MMMM");
     this.cdRef.detectChanges();
   }
   // display current date 
   goCurrentDate(){
     const clickedDate = moment();
     this.currentDate = clickedDate.format("DD/MM/YYYY");
+    this.currentMonth = clickedDate.format("MMMM");
+    
   }
 }
