@@ -1,20 +1,13 @@
-<div class=" p-d-flex flex-column p-justify-center p-align-center">
-        <div class="form-container p-col-12 ">
-            <form (ngSubmit)="login()" #loginForm="ngForm" >
-            <h1 class="title text-center"> Login</h1>
-            <div class="card flex justify-content-center">
-                    <div class="card flex justify-content-center ">
-                         <input type="text" pInputText name="username" [(ngModel)]="model.username"
-                          placeholder="Username"/>
-                    </div>
-                    <div class="psw card flex justify-content-center">
-                        <p-password  type="password" name="password"
-                        [(ngModel)]="model.password"
-                        [feedback]="false" placeholder="Password..." ></p-password>                   
-                    </div>       
-            </div>
-            <p-button class="btn" label="Login" styleClass="p-button-rounded" (click)="login()"></p-button>
-        </form>
+<div class="card flex justify-content-center">
+    <p-card header="Title">
+        <div class="card flex justify-content-center">
+          <input type="text" pInputText formControlName="text" placeholder="Username"/>
         </div>
-    
-</div>
+        
+        <div class="card flex justify-content-center">
+          <form [formGroup]="formGroup">
+            <p-password formControlName="password" [toggleMask]="true" placeholder="Password"></p-password>
+          </form>
+        </div>
+    </p-card>
+</div>  

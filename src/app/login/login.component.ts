@@ -1,6 +1,6 @@
-import { Component} from '@angular/core';
-import { AccountService } from '../services/account.service';
-import { User } from './user';
+import { Component, OnInit} from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
@@ -8,15 +8,13 @@ import { User } from './user';
   styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent{
+export class LoginComponent implements OnInit {
+  formGroup!: FormGroup;
 
-  model : User = new User();
-  constructor(private accountService: AccountService){}
-
-  login(){
-    this.accountService.login(this.model);
-    console.log(this.model.username);
-    console.log(this.model.password);
-    console.log(this.accountService.isLoggedIn());
-   } ;
+    ngOnInit() {
+        this.formGroup = new FormGroup({
+          text: new FormControl<string | null>(null),
+          password: new FormControl()
+        });
+    }
 }
