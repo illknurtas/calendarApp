@@ -1,0 +1,21 @@
+<div class="col-12 flex justify-content-center align-items-center h-screen w-screen">
+    <p-card header="REGISTER" class="text-center col-6 w-28rem h-auto">
+        <form [formGroup]="registerForm" class="">
+          <div class="my-3">
+            <input type="text" pInputText 
+            formControlName="text" placeholder="Username"
+            class="w-auto border-round-3xl"/>
+          </div>
+          <div class="my-3">
+            <input type="password" pInputText 
+            placeholder="Password" formControlName="password"
+            class="w-auto border-round-3xl p-2"/>     
+          </div>
+        </form>
+        <div class="card flex justify-content-center">
+          <button pButton pRipple label="Done" 
+          class="bg-teal-200 w-6rem border-0 border-round-md">
+        </button>
+        </div>
+    </p-card>
+  </div>

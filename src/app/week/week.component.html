@@ -1,11 +1,14 @@
-<body>
-<div class="calendar">
-    <header>
-        <h1>{{currentMonth}}</h1>
+<div class="flex w-screen h-screen justify-content-center align-items-center flex-column c-color">
+    <header class="w-full">
+        <h1 class="text-center font-normal uppercase">
+            {{currentMonth}}
+        </h1>
     </header>
-    <main>
-        <div class="sidebar">
-            
+    <main class="flex flex-row w-full h-full">
+        <div class="sidebar
+        w-16rem h-auto md:w-13rem sm:w-10rem mx-3 my-3
+        text-2xl md:text-xl font-medium border-round-md
+        flex justify-content-center align-items-center text-center">
             <div class="week">
                 <p class="current">HAFTA {{currentWeek}}</p>
                 
@@ -34,4 +37,3 @@
 
     </footer>
 </div>
-</body>

@@ -10,6 +10,7 @@ import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import { ButtonModule } from "primeng/button";
 
 @NgModule({
     imports:[
@@ -24,7 +25,8 @@ import { SelectButtonModule } from 'primeng/selectbutton';
         TableModule,
         DialogModule,
         RadioButtonModule,
-        SelectButtonModule
+        SelectButtonModule,
+        ButtonModule
     ],
     exports:[
         CommonModule,
@@ -32,7 +34,8 @@ import { SelectButtonModule } from 'primeng/selectbutton';
         PasswordModule,
         ReactiveFormsModule,
         FormsModule,
-        CardModule
+        CardModule,
+        ButtonModule
     ]
 })
 
