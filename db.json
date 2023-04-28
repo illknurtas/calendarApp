@@ -1,5 +1,11 @@
 {
   "user": [
-   
+    {
+      "id": "Admin ",
+      "name": "Admin",
+      "password": "Admin!123",
+      "email": "admin@gmail.com",
+      "isActive": false
+    }
   ]
 }
