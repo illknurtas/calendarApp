@@ -15,8 +15,8 @@ export class AuthService {
     return this.http.get(this.apiUrl);
   }
 
-  getByCode(code:any){
-    return this.http.get(this.apiUrl+"/"+code);
+  getByCode(code:string){
+    return this.http.get(`${this.apiUrl}?user=${code}`);
   }
 
   proceedRegister(inputData:any){

@@ -11,7 +11,7 @@
       <form [formGroup]="loginForm" (ngSubmit)="proceedLogin()" class="">
         <div class="mb-5">
           <input type="text" pInputText 
-          formControlName="name" placeholder="Username"
+          formControlName="user" placeholder="Username"
           class="w-full border-round-3xl"/>
         </div>
         <div class="mb-1">
@@ -24,11 +24,12 @@
             <a [routerLink]="['/register']" class="font-bold text-sm">Register from here.</a>
           </p>
         </div>
+        <div class="card flex justify-content-center">
+          <button pButton pRipple label="Login" 
+            class="bg-teal-200 w-6rem border-0 border-round-md">
+          </button>
+        </div>
       </form>
-      <div class="card flex justify-content-center">
-        <button pButton pRipple label="Login" 
-        class="bg-teal-200 w-6rem border-0 border-round-md">
-      </button>
-      </div>
+      
   </p-card>
 </div>
