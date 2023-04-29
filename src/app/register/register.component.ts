@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../services/auth.service';
@@ -9,29 +9,33 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
 
+  registerForm : FormGroup;
   constructor( private builder:FormBuilder,
     private toastr: ToastrService,
     private service: AuthService,
     private router:Router){
-
+      this.registerForm =this.builder.group({
+          id: new FormControl("",Validators.compose([
+            Validators.required, Validators.minLength(5)
+          ])),
+          name: new FormControl <string>("",Validators.required),
+          password: new FormControl("", Validators.compose([Validators.required,
+            Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&]).{8,}')])),
+          email: new FormControl ("",Validators.compose([Validators.required, Validators.email])),
+          isActive: new FormControl(false)})
     }
-  registerForm = this.builder.group({
-    id: this.builder.control("", Validators.compose([
-      Validators.required, Validators.minLength(5)])),
-    name: this.builder.control("", Validators.required),
-    password: this.builder.control("", Validators.compose([Validators.required, 
-      Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')])),
-    email: this.builder.control("", Validators.compose([Validators.required, Validators.email])),
-    isActive: this.builder.control(false)
-  })
+
+    ngOnInit() {
+        
+  }
 
   proceedRegistration(){
     if(this.registerForm.valid){
       this.service.proceedRegister(this.registerForm.value).subscribe(res=>{
         this.toastr.success("Please contact admin for enable access","Successfully registered!");
-        this.router.navigate([""]);
+        this.router.navigate(["/"]);
       })
     }
     else{

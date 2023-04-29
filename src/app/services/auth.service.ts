@@ -26,7 +26,4 @@ export class AuthService {
   updateUser(code: any, inputData: any){
     return this.http.post(this.apiUrl+"/"+code, inputData);
   }
-
-
-
 }
