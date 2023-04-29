@@ -12,13 +12,15 @@ import { WeekComponent } from './week/week.component';
 
 import { PrimengModule } from '../primeng.module';
 import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     WeekComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

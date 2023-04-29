@@ -4,8 +4,7 @@
       "id": "Admin ",
       "name": "Admin",
       "password": "Admin!123",
-      "email": "admin@gmail.com",
-      "isActive": true
+      "email": "admin@gmail.com"
     }
   ]
 }

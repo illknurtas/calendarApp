@@ -23,8 +23,9 @@ export class RegisterComponent implements OnInit {
           name: new FormControl <string>("",Validators.required),
           password: new FormControl("", Validators.compose([Validators.required,
             Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&]).{8,}')])),
-          email: new FormControl ("",Validators.compose([Validators.required, Validators.email])),
-          isActive: new FormControl(false)})
+          email: new FormControl ("",Validators.compose([Validators.required, Validators.email]))
+        }
+      )
     }
 
     ngOnInit() {
@@ -35,7 +36,7 @@ export class RegisterComponent implements OnInit {
     if(this.registerForm.valid){
       this.service.proceedRegister(this.registerForm.value).subscribe(res=>{
         this.toastr.success("Please contact admin for enable access","Successfully registered!");
-        this.router.navigate(["/"]);
+        this.router.navigate(["/login"]);
       })
     }
     else{

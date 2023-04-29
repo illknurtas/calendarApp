@@ -17,7 +17,8 @@ export class LoginComponent implements OnInit {
     private toastr: ToastrService,
     private service: AuthService,
     private router: Router) {
-    this.loginForm =this.builder.group({
+      sessionStorage.clear();
+      this.loginForm =this.builder.group({
         user: new FormControl("", Validators.required),
         password: new FormControl("",Validators.required)
     });
@@ -32,13 +33,8 @@ export class LoginComponent implements OnInit {
         this.userData = res[0];
         console.log(this.userData);
         if(this.userData.password === this.loginForm.value.password){
-          if(this.userData.isActive){
             sessionStorage.setItem("username", this.userData.id);
             this.router.navigate(["/week"]);
-          }
-          else{
-            this.toastr.error("Inactive user!");
-          } 
         }
         else{
           this.toastr.error("Control your username and password");

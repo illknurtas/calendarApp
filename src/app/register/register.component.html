@@ -1,7 +1,7 @@
 <div class="col-12 flex justify-content-center align-items-center h-screen w-screen">
     <p-card class="text-center col-6 w-28rem h-auto">
       <header class="flex justify-content-evenly align-items-center flex-row mb-7 h-full">
-        <div [routerLink]="['/']" class="inactive h-full">
+        <div [routerLink]="['/login']" class="inactive h-full">
           <i class="pi pi-user"></i>
         </div>
         <div [routerLinkActive]="'active'" [routerLink]="['/register']" class="col-8 h-full">
@@ -31,7 +31,7 @@
           </div>
           <div class="flex justify-content-start mb-6 ml-2">
             <p class="text-xs">You already have an account? 
-              <a [routerLink]="['/']" class="font-bold text-sm">Login from here.</a>
+              <a [routerLink]="['/login']" class="font-bold text-sm">Login from here.</a>
             </p>
           </div>
           <div class="card flex justify-content-center">
