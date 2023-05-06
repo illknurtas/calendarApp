@@ -1,22 +1,5 @@
 {
   "user": [
-    {
-      "id": "Admin ",
-      "name": "Admin",
-      "password": "Admin!123",
-      "email": "admin@gmail.com"
-    },
-    {
-      "id": "Test_user",
-      "name": "User",
-      "password": "User!123",
-      "email": "user@gmail.com"
-    },
-    {
-      "id": "Admin2",
-      "name": "Admin2",
-      "password": "Admin!123",
-      "email": "admin@outlook.com"
-    }
+   
   ]
 }
