@@ -1,7 +1,16 @@
-<div class="col-12 flex justify-content-center align-items-center h-screen w-screen">
+<div>
+  <p class="flex justify-content-start align-items-start ml-4">
+    <i  [routerLink]="['/']" 
+    class="pi pi-home mb-8 lg:text-4xl sm:text-2xl text-indigo-900"></i>
+  </p>
+  <div class="col-12 flex justify-content-center align-items-center h-auto w-auto">
   <p-card class="text-center col-6 w-28rem h-auto">
-    <header class="flex justify-content-evenly align-items-center flex-row mb-7 h-full">
-      <div [routerLinkActive]="'active'" [routerLink]="['/login']" class="col-7 h-full">
+    <header class="flex justify-content-evenly align-items-center flex-row mb-7 h-full 
+    lg:text-lg lg:font-semibold sm:text-md sm:font-medium">
+      <div [routerLink]="['/login']" 
+      class="col-7 h-full pb-2
+      text-indigo-900 bg-indigo-50
+      border-round-top-3xl">
         LOGIN <i class="pi pi-user ml-4"></i>
       </div>
       <div [routerLink]="['/register']" class="inactive h-full">
@@ -20,16 +29,17 @@
           class="w-full border-round-3xl p-2"/>     
         </div>
         <div class="flex justify-content-start mb-6 ml-2">
-          <p class="text-xs">You don't have an account? 
-            <a [routerLink]="['/register']" class="font-bold text-sm">Register from here.</a>
+          <p class="lg:text-sm sm:text-xs">You don't have an account? 
+            <a [routerLink]="['/register']" 
+            class="font-bold lg:text-sm sm:text-xs text-indigo-900 no-underline">Register from here.</a>
           </p>
         </div>
         <div class="card flex justify-content-center">
           <button pButton pRipple label="Login" 
-            class="bg-teal-200 w-6rem border-0 border-round-md">
+            class="bg-indigo-200 w-6rem border-0 border-round-md">
           </button>
         </div>
       </form>
-      
   </p-card>
+</div>
 </div>

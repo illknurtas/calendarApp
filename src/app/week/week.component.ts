@@ -1,5 +1,6 @@
 import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
 import * as moment from 'moment';
+import {NavbarComponent} from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-week',
@@ -14,7 +15,7 @@ export class WeekComponent {
   currentMonth: string;
 
   constructor(private cdRef: ChangeDetectorRef){
-    moment.locale('tr');
+    // moment.locale('tr');
     const today = moment();
     this.currentWeek = today.week();
     this.currentMonth = today.format("MMMM"); // current month

@@ -1,32 +1,65 @@
-<div class="flex w-screen h-screen justify-content-center align-items-center flex-column c-color">
-    <header class="w-full">
-        <h1 class="text-center font-normal uppercase">
+<div class="p-col-12 flex justify-content-center align-items-center flex-column 
+w-screen h-screen m-0 p-0">
+
+    <nav class="w-full">
+        <app-navbar></app-navbar>
+    </nav>
+    
+    <header class="lg:w-11 sm:w-7 h-4rem border-round-3xl bg-indigo-100 mt-3">
+        <h1 class="font-normal uppercase text-700
+        flex align-items-center justify-content-center mt-3">
             {{currentMonth}}
         </h1>
     </header>
-    <main class="flex flex-row w-full h-full">
-        <div class="sidebar
-        w-16rem h-auto md:w-13rem sm:w-10rem mx-3 my-3
-        text-2xl md:text-xl font-medium border-round-md
-        flex justify-content-center align-items-center text-center">
-            <div class="week">
-                <p class="current">HAFTA {{currentWeek}}</p>
+
+
+    <main class="flex flex-row w-full h-full flex align-items-center">
+        <div class="sidebar flex justify-content-center align-items-center
+        bg-indigo-50 border-round-md
+        w-2 h-30rem mx-3
+        sm:h-25rem">
+            <div class="flex align-items-center justify-content-center week">
+                <p class="current" 
+                class="text-center text-primary-800
+                lg:font-medium lg:text-xl 
+                sm:text-sm sm:font-normal">WEEK {{currentWeek}}</p>
             </div>
         </div>
-        <div class="main">
-            <div class="days">
-                <div class="day">
-                    <p *ngFor="let dayName of dayNames">{{dayName}}</p>
+        <div class="main flex flex-column justify-content-center align-items-center w-full">
+            <div class="flex flex-column justify-content-evenly align-items-center 
+            m-0 p-0 w-full h-auto">
+                <div class="w-11 day text-center flex flex-row justify-content-evenly align-items-center -ml-3">
+                    <p *ngFor="let dayName of dayNames"
+                    class="text-center p-2 sm:p-1 m-0
+                    border-round-md bg-primary-50 text-primary-800 font-base hover:shadow-5
+                    lg:w-8rem 
+                    md:w-5rem md:text-sm
+                    sm:text-xs">{{dayName}}</p>
                 </div>
-                <div class="weekdays">
-                    <p *ngFor="let weekDay of weekDays">{{weekDay}}</p>
+
+                <div class="weekdays flex flex-row w-11">
+                    <p *ngFor="let weekDay of weekDays"
+                    class="flex flex-row justify-content-start align-items-start
+                    pl-2 pt-2 sm:pl-1 sm:pt-1
+                    text-primary-800 text-xl
+                    border-1 border-indigo-200 hover:shadow-5
+                    lg:h-10rem lg:w-10rem
+                    md:h-8rem md:w-8
+                    sm:h-5rem sm:w-7">{{weekDay}}</p>
                 </div>
-                
             </div>
-            <div class="arrows">
-                <button pButton pRipple label="ÖNCEKİ" (click)="goPreviousWeek()"></button>
-                <p (click)="goCurrentDate()">{{currentDate}}</p>
-                <button pButton pRipple label="SONRAKİ" (click)="goNextWeek()"></button>
+            <div class="flex justify-content-evenly align-items-center col-7 bottom-0 flex-row w-full h-auto text-center">
+                <p-button label="PREVIOUS" (click)="goPreviousWeek()"
+                styleClass="m-3 w-12rem p-button-raised p-button-text p-button-rounded font-medium
+                border-indigo-200 hover:border-primary-100 text-primary-800 hover:text-indigo-300"></p-button>
+                
+                <p (click)="goCurrentDate()" 
+                class="hover:shadow-3 p-2 border-round-xl md:w-3 sm:w-max text-700">{{currentDate}}</p>
+                
+                <p-button label="NEXT" (click)="goNextWeek()"
+                styleClass="m-3 w-12rem 
+                p-button-raised p-button-text p-button-rounded font-medium
+                border-indigo-200 hover:border-primary-100 text-primary-800 hover:text-indigo-300"></p-button>
             </div>
         </div>
     </main>

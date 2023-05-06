@@ -8,9 +8,9 @@ import { PaginatorModule } from 'primeng/paginator';
 import { CheckboxModule } from 'primeng/checkbox';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
-import { RadioButtonModule } from 'primeng/radiobutton';
-import { SelectButtonModule } from 'primeng/selectbutton';
 import { ButtonModule } from "primeng/button";
+import { DividerModule } from 'primeng/divider';
+import { PanelModule } from 'primeng/panel';
 
 @NgModule({
     imports:[
@@ -24,9 +24,9 @@ import { ButtonModule } from "primeng/button";
         CheckboxModule,
         TableModule,
         DialogModule,
-        RadioButtonModule,
-        SelectButtonModule,
-        ButtonModule
+        ButtonModule,
+        DividerModule,
+        
     ],
     exports:[
         CommonModule,
@@ -35,7 +35,9 @@ import { ButtonModule } from "primeng/button";
         ReactiveFormsModule,
         FormsModule,
         CardModule,
-        ButtonModule
+        ButtonModule,
+        DividerModule,
+        PanelModule
     ]
 })
 
